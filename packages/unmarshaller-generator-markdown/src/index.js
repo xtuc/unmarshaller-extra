@@ -1,10 +1,11 @@
 import {flattenConfig} from 'unmarshaller-helpers';
+import dedent from 'dedent';
+import path from 'path';
 
-function generateDocumentation(buildConfigPath) {
-  const dir = path.dirname(buildConfigPath);
+function generateDocumentation(filename) {
   const unmarshallerPath = path.join(
-    dir,
-    'config.js'
+    process.cwd(),
+    filename
   );
 
   let unmarshaller;
@@ -12,7 +13,7 @@ function generateDocumentation(buildConfigPath) {
   try {
     unmarshaller = require(unmarshallerPath).unmarshaller;
   } catch (e) {
-    // Nothing
+    throw e;
   }
 
   if (unmarshaller) {
@@ -29,7 +30,7 @@ function generateDocumentation(buildConfigPath) {
       }
 
       return dedent`
-        |\`${name}\`|\`${type}\`|${defaultValue ? '`' + defaultValue + '`' : ''}|${description || ''}|
+        |\`${name}\`|\`${type}\`|${defaultValue ? '`' + defaultValue + '`' : '-'}|${description || '-'}|
         `;
     };
 
@@ -42,10 +43,7 @@ function generateDocumentation(buildConfigPath) {
 
     const rows = flattenConfig(unmarshaller).map(rowTemplate).filter(x => x);
 
-    fs.writeFileSync(
-      path.join(dir, 'README.md'),
-      template(rows)
-    );
+    console.log(template(rows));
   }
 }
 
