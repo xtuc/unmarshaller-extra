@@ -1,0 +1,16 @@
+{
+  "name": "unmarshaller-generator-storybook-knobs",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sven SAULEAU",
+  "license": "ISC",
+  "dependencies": {
+    "@kadira/storybook-addon-knobs": "^1.7.1",
+    "@kadira/storybook-addons": "^1.6.1",
+    "react": "^15.5.4"
+  }
+}
