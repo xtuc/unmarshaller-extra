@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
+  "bin": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sven SAULEAU",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "unmarshaller-helpers": "0.0.0-alpha.d5109f60"
+  }
 }
