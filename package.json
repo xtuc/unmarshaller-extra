@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "build:all": "lerna ls | cut -d ' ' -f1 | xargs -I {} sh -c './node_modules/.bin/babel packages/{}/src --out-dir packages/{}/lib'"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "lerna": "^2.0.0-rc.5"
+  },
+  "babel": {
+    "plugins": [
+      "transform-flow-strip-types",
+      "transform-es2015-modules-commonjs"
+    ]
+  }
+}
