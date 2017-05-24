@@ -8,9 +8,5 @@
   },
   "author": "Sven SAULEAU",
   "license": "ISC",
-  "dependencies": {
-    "@kadira/storybook-addon-knobs": "^1.7.1",
-    "@kadira/storybook-addons": "^1.6.1",
-    "react": "^15.5.4"
-  }
+  "dependencies": {}
 }

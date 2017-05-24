@@ -1,12 +1,10 @@
-import * as knobs from '@kadira/storybook-addon-knobs';
-
 /**
  * Generate knobs from unmarshaller
  *
  * @param {Object} unmarshaller
  * @returns {Object}
  */
-export function generateKnobs(unmarshaller: Object) {
+export function generateKnobs(unmarshaller: Object, knobs: object) {
   const keys = Object.keys(unmarshaller);
 
   return keys.reduce((acc, key) => {
@@ -19,8 +17,6 @@ export function generateKnobs(unmarshaller: Object) {
     }
 
     defaultValue = defaultValue !== null && defaultValue !== undefined ? defaultValue : exampleValue;
-
-    console.log(knobs);
 
     switch(type) {
     case 'string':
