@@ -1,12 +1,11 @@
 {
   "name": "unmarshaller-generator-storybook-knobs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sven SAULEAU",
-  "license": "ISC",
-  "dependencies": {}
+  "license": "ISC"
 }
