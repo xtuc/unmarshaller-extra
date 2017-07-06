@@ -27,7 +27,7 @@ function _flattenConfig(unmarshaller: Object) {
   return keys.reduce((acc, k) => {
     const config = unmarshaller[k];
 
-    if (config.type === 'holder') {
+    if (config.type === 'holder' || config.type === 'or') {
       return [...acc, ..._flattenConfig(config.children)];
     }
 
